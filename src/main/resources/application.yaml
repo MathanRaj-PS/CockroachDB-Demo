@@ -1,0 +1,41 @@
+app:
+  version: 1.0
+  description: Restful service using Spring Boot for customer services
+server:
+  port: 8080
+spring:
+  application:
+    name: CUSTOMER-SERVICE
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.yaml
+  datasource:
+    url: jdbc:postgresql://localhost:26257/voyager
+    driver-class-name: org.postgresql.Driver
+    username: mathan
+    password:
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        format_sql: true
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui
+
+logging:
+  level:
+    liquibase: DEBUG
+    org:
+#      springframework:
+#        web: DEBUG
+#      hibernate: DEBUG
+
+
+

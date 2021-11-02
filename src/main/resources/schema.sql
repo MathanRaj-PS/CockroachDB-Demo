@@ -1,0 +1,20 @@
+--CREATE TABLE Customer (
+--  OrgId UUID NOT NULL,
+--  CustomerId UUID NOT NULL,
+--  CreatorRole STRING(64000),
+--  ModifierRole STRING(64000),
+--  PRIMARY KEY(CustomerId)
+--);
+--
+--CREATE INDEX customer_idx ON customer (orgid, customertype );
+--
+--
+--CREATE TABLE Address (
+--  CustomerId STRING(36) NOT NULL REFERENCES customer(customerid) ON DELETE CASCADE,
+--  OrgId STRING(36) NOT NULL,
+--  AddressId STRING(36) NOT NULL,
+--  City STRING(64000),
+--  CountryCode STRING(3),
+--  PRIMARY KEY(AddressId)
+--) ;
+--CREATE INDEX address_idx ON address (orgid, customerid );

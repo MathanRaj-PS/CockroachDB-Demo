@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: createTable
+      author: Mathan Raj O
+      changes:
+        - sqlFile:
+            dbms: h2
+            encoding: utf8
+            endDelimiter: \n/\s*\n|\n/\s*$
+            path: scripts/01-create-customers-and-addresses-schema.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+  - changeSet:
+      id: insertTableAddresses
+      author: Mathan Raj O
+      changes:
+        - sqlFile:
+            dbms: h2
+            encoding: utf8
+            path: scripts/02-insert-data-addresses.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+  - changeSet:
+      id: insertTableUsers
+      author: Mathan Raj O
+      changes:
+        - sqlFile:
+            dbms: h2
+            encoding: utf8
+            path: scripts/02-insert-data-customers.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
